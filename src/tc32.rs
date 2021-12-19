@@ -1,4 +1,16 @@
 //! Working with timer counter hardware
+//!
+//! Note:
+//! TC3 + TC4 can be paired to make a 32-bit counter
+//! TC5 + TC6 can be paired to make a 32-bit counter
+//!
+//! A generic hardware timer counter.
+//!
+//! TimerCounter implements both the `Periodic` and
+//! the `CountDown` embedded_hal timer traits.
+//! Before a hardware timer can be used, it must first
+//! have a clock configured.
+
 use hal::ehal::timer::CountDown;
 use hal::prelude::nb;
 
@@ -11,16 +23,7 @@ use hal::time::{Hertz, Nanoseconds};
 
 use xiao_m0::hal;
 
-// Note:
-// TC3 + TC4 can be paired to make a 32-bit counter
-// TC5 + TC6 can be paired to make a 32-bit counter
-
 /// A generic hardware timer counter.
-/// The counters are exposed in 16-bit mode only.
-/// The hardware allows configuring the 8-bit mode
-/// and pairing up some instances to run in 32-bit
-/// mode, but that functionality is not currently
-/// exposed by this hal implementation.
 /// TimerCounter implements both the `Periodic` and
 /// the `CountDown` embedded_hal timer traits.
 /// Before a hardware timer can be used, it must first
