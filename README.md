@@ -8,14 +8,14 @@ Todo
 
 ## Todo
 
-[x] i2c
-[x] magnet sensor
-[x] usb_serial
-[x] tc32 
-[x] time
-[x] led
-[ ] ext_int_pin
-[ ] stepper
+- [x] i2c
+- [x] magnet sensor
+- [x] usb_serial
+- [x] tc32 
+- [x] time
+- [x] led
+- [ ] ext_int_pin
+- [ ] stepper
 
 
 ## Hardware: Seeeduino XIAO
